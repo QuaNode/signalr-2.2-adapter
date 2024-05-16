@@ -2,7 +2,7 @@
   "name": "signalr-2.2-adapter",
   "version": "2.2.0",
   "description": "Adapter for signalr-2.2 to be used with BeamJS signalr-service",
-  "main": "src/index.js",
+  "main": "signalr/src/index.js",
   "scripts": {
     "test": "snyk test && test",
     "snyk-protect": "snyk protect",
