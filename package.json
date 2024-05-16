@@ -1,5 +1,5 @@
 {
-  "name": "signalr-2.2-adapter",
+  "name": "@microsoft/signalr",
   "version": "2.2.0",
   "description": "Adapter for signalr-2.2 to be used with BeamJS signalr-service",
   "main": "signalr/src/index.js",
