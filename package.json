@@ -1,12 +1,10 @@
 {
-  "name": "@microsoft/signalr",
+  "name": "signalr-2.2-adapter",
   "version": "2.2.0",
   "description": "Adapter for signalr-2.2 to be used with BeamJS signalr-service",
   "main": "signalr/src/index.js",
   "scripts": {
-    "test": "snyk test && test",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "test": "test"
   },
   "dependencies": {
     "jsdom": "^8.1.0"
@@ -25,6 +23,5 @@
   "bugs": {
     "url": "https://github.com/quanode/signalr-2.2-adapter/issues"
   },
-  "homepage": "https://github.com/quanode/signalr-2.2-adapter#readme",
-  "snyk": true
+  "homepage": "https://github.com/quanode/signalr-2.2-adapter#readme"
 }
