@@ -1,4 +1,4 @@
-JavaScript and TypeScript clients for SignalR 2.2 for ASP.NET 4
+JavaScript and TypeScript clients for SignalR 2 for ASP.NET 4
 
 ### Example (Browser)
 

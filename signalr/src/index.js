@@ -1,40 +1,15 @@
 /*jslint node: true*/
 'use strict';
 
-var jsdom = require('jsdom');
-var window = jsdom.jsdom().defaultView;
+var { JSDOM } = require('jsdom');
+var { window } = new JSDOM();
+var { document } = window;
 
-const jquery_2 = 'https://code.jquery.com/jquery-2.2.2.min.js';
-const jquery_signalr_2 = 'https://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js';
+global.window = window;
+global.document = document;
+global.$ = global.jQuery = require('jquery')(window);
 
-var loadScript = function (src) {
-
-    return new Promise((resolve, reject) => {
-
-        let script = window.document.createElement('script');
-        script.src = src;
-        window.document.body.appendChild(script);
-        script.onload = (e) => resolve(e);
-        script.onerror = (err) => reject(err);
-    });
-};
-
-jsdom.jQueryify(window, jquery_2, function () {
-
-    if (typeof window.$ === 'function') {
-
-        loadScript(jquery_signalr_2).then(function () {
-
-            if (typeof window.$.hubConnection !== 'function') {
-
-                throw new Error('SignalR script failed');
-            }
-        }).catch(function () {
-
-            throw new Error('SignalR script failed');
-        });
-    } else throw new Error('jsdom jQueryify failed');
-});
+require('signalr');
 
 var SignalR = module.exports = {
 
@@ -87,6 +62,14 @@ var SignalR = module.exports = {
 
             start: function () {
 
+                if (typeof window.$ !== 'function') {
+
+                    throw new Error('jsdom jQueryify failed');
+                }
+                if (typeof window.$.hubConnection !== 'function') {
+
+                    throw new Error('SignalR script failed');
+                }
                 let { accessTokenFactory: access } = self.options || {};
                 let qs;
                 if (typeof access === 'function') {

@@ -1,13 +1,15 @@
 {
-  "name": "signalr-2.2-adapter",
-  "version": "2.2.0",
-  "description": "Adapter for signalr-2.2 to be used with BeamJS signalr-service",
+  "name": "signalr-2-adapter",
+  "version": "2.4.3",
+  "description": "Adapter for signalr-2 to be used with BeamJS signalr-service",
   "main": "signalr/src/index.js",
   "scripts": {
     "test": "test"
   },
   "dependencies": {
-    "jsdom": "^8.1.0"
+    "jsdom": "^21.1.2",
+    "jquery": "^3.6.1",
+    "signalr": "^2.4.3"
   },
   "repository": {
     "type": "git",
