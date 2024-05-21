@@ -7,7 +7,7 @@ var { document } = window;
 
 global.window = window;
 global.document = document;
-global.$ = global.jQuery = require('jquery')(window);
+window.$ = window.jQuery = require('jquery');
 
 require('signalr');
 
